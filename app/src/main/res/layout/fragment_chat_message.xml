@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+>
+
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingBottom="10dp"
+            android:background="@color/color_blue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+        >
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_Pic"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@color/colorBlack"
+            />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_collapsing_hide"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/profile_Pic"
+                    app:layout_constraintRight_toLeftOf="@+id/iv_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+            >
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_you_are_at"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textSize="12sp"
+                        android:alpha=".7"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/text_you_are_in"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/et_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_you_are_at"
+                        app:layout_constraintBottom_toTopOf="@+id/viewwLast"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/colorWhite"
+                        android:text="Durban SA"
+                />
+                <View
+                        android:id="@+id/viewwLast"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:background="@drawable/horizontal_dashed_line"
+                        app:layout_constraintRight_toRightOf="@+id/et_location"
+                        app:layout_constraintTop_toBottomOf="@+id/et_location"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                    android:id="@+id/iv_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_bell"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_chatMessage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_no_conversation_found"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:layout_height="wrap_content">
+
+        <ImageView android:layout_width="64dp"
+                   android:layout_height="52dp"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:src="@drawable/ic_no_conversations"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   app:layout_constraintRight_toRightOf="parent"
+                   android:paddingLeft="10dp"
+                   android:paddingRight="10dp"
+                   android:id="@+id/iv_warning"
+        />
+
+
+        <View android:layout_width="0dp" android:layout_height="2dp"
+              android:background="@color/grey_1"
+              app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+              app:layout_constraintLeft_toLeftOf="@+id/iv_warning"
+              app:layout_constraintRight_toRightOf="@+id/iv_warning"
+              android:layout_marginTop="10dp"
+
+        />
+
+
+        <com.utalli.RobotoRegularTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                android:text="@string/txt_no_chats_available"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/color_blue"
+                android:textSize="20sp"
+                android:id="@+id/tv_txt_found_nothing"
+        />
+
+        <com.utalli.RobotoRegularTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_txt_found_nothing"
+                android:text="You have no conversations with guides"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/grey_6"
+                android:textSize="14sp"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:id="@+id/cl_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_back_gradient"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            >
+
+            <com.utalli.RobotoRegularTextView
+                android:id="@+id/card_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="14sp"
+                android:textColor="@color/color_card"
+                android:text="Card number"/>
+
+
+            <com.utalli.RobotoMediumTextView
+                android:id="@+id/tv_card_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/card_number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="1234    5678    4567    7890"
+                />
+
+            <com.utalli.RobotoRegularTextView
+                android:id="@+id/nameOnCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/cvv"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/color_card"
+                android:text="Name on card"
+                />
+
+            <com.utalli.RobotoRegularTextView
+                android:id="@+id/cvv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_number"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/color_card"
+                android:text="CVV"
+                />
+
+            <com.utalli.RobotoMediumTextView
+                android:id="@+id/tv_card_holder_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/nameOnCard"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="Janice Crowford"
+                />
+
+            <com.utalli.RobotoMediumTextView
+                    android:id="@+id/tv_cvv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/nameOnCard"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="436"/>
+
+            <com.utalli.RobotoRegularTextView
+                android:id="@+id/validThrough"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_holder_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/color_card"
+                android:text="Valid through"
+                />
+
+            <com.utalli.RobotoMediumTextView
+                    android:id="@+id/tv_validThrough"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/validThrough"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="10/34"
+                />
+
+            <ImageView
+                    android:id="@+id/iv_delete_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/delete_icon"
+                    android:background="@drawable/solid_circle_red"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/coordinate_layout"
+        android:background="@color/color_primary_light"
+>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+        >
+
+
+            <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_compass_titlebar"
+                    android:layout_marginTop="42dp"
+                    android:layout_gravity="right|bottom"
+            />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_collapsingToolbar_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_First"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_Pic"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginLeft="6dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@color/colorBlack"
+                    />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_collapsing_hide"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/profile_Pic"
+                            app:layout_constraintRight_toLeftOf="@+id/iv_notification"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                    >
+
+                        <com.utalli.RobotoRegularTextView
+                                android:id="@+id/tv_you_are_at"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:textSize="12sp"
+                                android:alpha=".7"
+                                android:textColor="@color/colorWhite"
+                                android:text="@string/text_you_are_in"
+                        />
+
+                        <com.utalli.RobotoRegularTextView
+                                android:id="@+id/et_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_you_are_at"
+                                app:layout_constraintBottom_toTopOf="@+id/viewwLast"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/colorWhite"
+                                android:text=""
+                        />
+                        <View
+                                android:id="@+id/viewwLast"
+                                android:layout_width="0dp"
+                                android:layout_height="5dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:background="@drawable/horizontal_dashed_line"
+                                app:layout_constraintRight_toRightOf="@+id/et_location"
+                                app:layout_constraintTop_toBottomOf="@+id/et_location"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                        <ProgressBar android:layout_width="0dp" android:layout_height="5dp"
+                                     android:id="@+id/pb_location"
+                                     app:layout_constraintLeft_toLeftOf="@+id/et_location"
+                                     app:layout_constraintRight_toRightOf="@+id/et_location"
+                                     app:layout_constraintTop_toBottomOf="@+id/et_location"
+                                     style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                                     android:indeterminate="true"
+                        />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                            android:id="@+id/iv_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/ic_bell"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Toolbar
+                    android:id="@+id/toolbar_nearMe"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    android:visibility="visible"
+                    android:layout_gravity="bottom"
+                    app:layout_anchor="@id/collapsing_toolbar"
+                    android:elevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_First_tolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_Pic_toolbar"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@color/colorBlack"
+                            android:visibility="gone"
+
+                    />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_toolbar_search_toolbar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/profile_Pic_toolbar"
+                            app:layout_constraintRight_toLeftOf="@+id/iv_notification_toolbar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:visibility="visible"
+                    >
+
+                        <com.utalli.RobotoRegularTextView
+                                android:id="@+id/tv_searchSecond_toolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/rounded_rect_white"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:textSize="14sp"
+                                android:drawablePadding="15dp"
+                                android:hint="@string/hint_explore_country_or_place"
+                                android:paddingBottom="10dp"
+                                android:drawableLeft="@drawable/ic_search_black_24dp"
+                        />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <ImageView
+                            android:id="@+id/iv_notification_toolbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/ic_bell"
+                            android:visibility="gone"
+
+                    />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_parentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+            >
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_guide_list"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:fillViewport="true"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_view_container"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:fillViewport="true"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                >
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="match_parent"
+                                  android:orientation="vertical"
+                    >
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                            <View
+                                    android:id="@+id/iv_place_pic_1"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@+id/iv_place_pic_2"
+                                    android:background="@drawable/grey_circle"
+                                    app:layout_constraintHorizontal_chainStyle="spread"
+                            />
+
+                            <View
+                                    android:id="@+id/tv_place_name_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="16dp"
+                                    app:layout_constraintLeft_toLeftOf="@+id/iv_place_pic_1"
+                                    app:layout_constraintTop_toBottomOf="@+id/iv_place_pic_1"
+                                    app:layout_constraintRight_toRightOf="@+id/iv_place_pic_1"
+                                    android:gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textSize="10sp"
+                                    android:background="@color/grey_1"
+                            />
+
+                            <View
+                                    android:id="@+id/iv_place_pic_2"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@+id/iv_place_pic_1"
+                                    app:layout_constraintRight_toLeftOf="@+id/iv_place_pic_3"
+                                    android:background="@drawable/grey_circle"
+                            />
+
+                            <View
+                                    android:id="@+id/tv_place_name_2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="16dp"
+                                    app:layout_constraintLeft_toLeftOf="@+id/iv_place_pic_2"
+                                    app:layout_constraintTop_toBottomOf="@+id/iv_place_pic_2"
+                                    app:layout_constraintRight_toRightOf="@+id/iv_place_pic_2"
+                                    android:gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textSize="10sp"
+                                    android:background="@color/grey_1"
+                            />
+
+
+                            <View
+                                    android:id="@+id/iv_place_pic_3"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@+id/iv_place_pic_2"
+                                    app:layout_constraintRight_toLeftOf="@+id/iv_place_pic_4"
+                                    android:background="@drawable/grey_circle"
+                            />
+
+                            <View
+                                    android:id="@+id/tv_place_name_3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="16dp"
+                                    app:layout_constraintLeft_toLeftOf="@+id/iv_place_pic_3"
+                                    app:layout_constraintTop_toBottomOf="@+id/iv_place_pic_3"
+                                    app:layout_constraintRight_toRightOf="@+id/iv_place_pic_3"
+                                    android:gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textSize="10sp"
+                                    android:background="@color/grey_1"
+                            />
+
+
+                            <View
+                                    android:id="@+id/iv_place_pic_4"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="16dp"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@+id/iv_place_pic_3"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:background="@drawable/grey_circle"
+                            />
+
+                            <View
+                                    android:id="@+id/tv_place_name_4"
+                                    android:layout_width="0dp"
+                                    android:layout_height="16dp"
+                                    app:layout_constraintLeft_toLeftOf="@+id/iv_place_pic_4"
+                                    app:layout_constraintTop_toBottomOf="@+id/iv_place_pic_4"
+                                    app:layout_constraintRight_toRightOf="@+id/iv_place_pic_4"
+                                    android:gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:textSize="10sp"
+                                    android:background="@color/grey_1"
+                            />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <include android:id="@+id/guide_layout_1"
+                                 layout="@layout/guide_shimmer_layout"
+                                 app:layout_constraintLeft_toLeftOf="parent"
+                                 app:layout_constraintRight_toRightOf="parent"
+
+                                 app:layout_constraintTop_toBottomOf="@+id/tv_place_name_1"
+
+                        />
+                        <include android:id="@+id/guide_layout_2"
+                                 layout="@layout/guide_shimmer_layout"
+                                 app:layout_constraintLeft_toLeftOf="parent"
+                                 app:layout_constraintRight_toRightOf="parent"
+
+                                 app:layout_constraintTop_toBottomOf="@+id/guide_layout_1"
+
+                        />
+                        <include android:id="@+id/guide_layout_3"
+                                 layout="@layout/guide_shimmer_layout"
+                                 app:layout_constraintLeft_toLeftOf="parent"
+                                 app:layout_constraintRight_toRightOf="parent"
+
+                                 app:layout_constraintTop_toBottomOf="@+id/guide_layout_2"
+
+                        />
+                        <include android:id="@+id/guide_layout_4"
+                                 layout="@layout/guide_shimmer_layout"
+                                 app:layout_constraintLeft_toLeftOf="parent"
+                                 app:layout_constraintRight_toRightOf="parent"
+
+                                 app:layout_constraintTop_toBottomOf="@+id/guide_layout_3"
+
+                        />
+
+
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_no_GuideFound"
+                    android:layout_width="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:layout_height="wrap_content">
+
+                <ImageView android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:src="@drawable/ic_no_guide_found"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:paddingLeft="10dp"
+                           android:paddingRight="10dp"
+                           android:id="@+id/iv_warning"
+                />
+
+
+                <View android:layout_width="0dp" android:layout_height="2dp"
+                      android:background="@color/grey_1"
+                      app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                      app:layout_constraintLeft_toLeftOf="@+id/iv_warning"
+                      app:layout_constraintRight_toRightOf="@+id/iv_warning"
+                />
+
+
+                <com.utalli.RobotoRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                        android:text="@string/no_guide_available"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/color_blue"
+                        android:textSize="20sp"
+                        android:id="@+id/tv_txt_found_nothing"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_txt_found_nothing"
+                        android:text="@string/nearest_guid_not_available"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/grey_6"
+                        android:textSize="14sp"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#07A0C3</color>
+    <color name="colorPrimaryDark">#007292</color>
+    <color name="colorAccent">#07A0C3</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack_2">#CC000000</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="grey">#9A9A9A</color>
+
+    <color name="light_grey">#F2F2F2</color>
+    <color name="grey_5">#6B6868</color>
+    <color name="grey_1">#d6d6d6</color>
+    <color name="grey_2">#FAFAFA</color>
+    <color name="grey_3">#80d6d6d6</color>
+    <color name="grey_4">#e6e6e6</color>
+    <color name="grey_6">#B3B1B1</color>
+    <color name="color_primary_light">#F7FEFF</color>
+
+
+    <color name="color_blue">#07A0C3</color>
+    <color name="color_red">#FF4310</color>
+
+    <color name="color_card">#8B97A1</color>
+
+
+    <color name="colorBgFirendChat">#FF5586F1</color>
+    <color name="colorBgUserChat">#FFFFFF</color>
+
+    <color name="translucent_white">#88ffffff</color>
+</resources>

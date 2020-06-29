@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+          package="com.utalli">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"/>
+
+
+    <application
+            android:name=".activity.UtaliiApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/app_icon"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/app_icon"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:enabled="true"
+                android:grantUriPermissions="true"
+                tools:replace="android:authorities">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".activity.GuidePoolsListActivity">
+
+        </activity>
+
+        <activity
+                android:name=".activity.SplashActivity"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".activity.ChatActivity"
+        android:screenOrientation="portrait"/>
+
+        <activity
+                android:name=".activity.SignUpActivity"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize|stateHidden"
+        />
+
+        <activity
+                android:name=".activity.LoginActivity"
+                android:screenOrientation="portrait"
+        />
+
+        <activity
+                android:name=".activity.ForgetPasswordActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.OTPActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.ResetPasswordActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.HomeActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.PlaceProfileDetailsActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.MyProfileActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.NotificationActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.SearchActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.GuideProfileDetailsActivity"
+                android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+                android:name=".activity.TripDetailsActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.GuideListActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.SettingActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activity.HelpAndSupportActivity"
+                android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.PaymentActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".activity.WebViewActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.ViewAllStateActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.AddPaymentCardActivity"
+                  android:windowSoftInputMode="adjustResize"
+                  android:screenOrientation="portrait"/>
+
+        <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="@string/default_notification_channel_id"/>
+
+        <service
+                android:name=".MessagingService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.PayNowActivity"
+                  android:screenOrientation="portrait"/>
+
+
+        <activity android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+                  android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>
+
+
+     <!--   <activity android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+                  android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>-->
+
+
+    </application>
+
+</manifest>

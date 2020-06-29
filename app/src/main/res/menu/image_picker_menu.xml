@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+>
+    <item android:id="@+id/item_camera"
+          android:title="@string/txt_camera"
+          android:icon="@drawable/camera_icon"
+    />
+    <item android:id="@+id/item_gallery"
+          android:title="@string/txt_gallery"
+          android:icon="@drawable/gallery"
+
+    />
+</menu>

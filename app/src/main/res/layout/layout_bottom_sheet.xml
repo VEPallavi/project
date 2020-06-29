@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <com.utalli.RobotoMediumTextView
+                android:id="@+id/tv_notifications"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="15dp"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                android:text="Notifications"
+        />
+        <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:src="@drawable/close_icon"
+                app:layout_constraintTop_toTopOf="@+id/tv_notifications"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notifications"
+        />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notification_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_notifications"
+                android:visibility="visible"
+        >
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_noNotification"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                android:layout_height="wrap_content">
+
+                <ImageView android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:src="@drawable/ic_notification_emptystate"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:paddingLeft="10dp"
+                           android:paddingRight="10dp"
+                           android:id="@+id/iv_warning"
+                />
+
+
+                <View android:layout_width="0dp" android:layout_height="2dp"
+                      android:background="@color/grey_1"
+                      app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                      app:layout_constraintLeft_toLeftOf="@+id/iv_warning"
+                      app:layout_constraintRight_toRightOf="@+id/iv_warning"
+                />
+
+
+                <com.utalli.RobotoRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                        android:text="@string/no_notification_available"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/color_blue"
+                        android:textSize="20sp"
+                        android:id="@+id/tv_txt_found_nothing"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_txt_found_nothing"
+                        android:text="@string/you_don_t_have_any_notification"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/grey_6"
+                        android:textSize="14sp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

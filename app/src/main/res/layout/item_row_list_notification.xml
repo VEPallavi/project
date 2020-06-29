@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+>
+
+    <com.utalli.RobotoMediumTextView
+            android:id="@+id/tv_notification_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layout_top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintRight_toLeftOf="@+id/iv_editProfile_icon"
+            android:text="Title Of notification"
+    />
+
+    <TextView
+            android:id="@+id/tv_notificationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="10:00 am"
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+    />
+
+    <com.utalli.RobotoRegularTextView
+            android:id="@+id/tv_notification_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notification_title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:text="hfwbrgwbrugv urhbvrgj hvberiuvbre vbrevb ngreiguer ghreugberu hrgberbgvxd"
+            android:textSize="14sp"
+    />
+
+    <View
+            android:id="@+id/vieww"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/grey_1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notification_description"
+            android:layout_marginTop="16dp"
+    />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

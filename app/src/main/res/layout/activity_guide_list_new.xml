@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:id="@+id/coordinate_layout"
+>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+        >
+
+            <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_compass_titlebar"
+                    android:layout_marginTop="32dp"
+                    android:layout_gravity="right|bottom"
+            />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_countryDateDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="25dp"
+                    android:layout_gravity="bottom"
+
+            >
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_days_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_date"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"
+                        android:text=""
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="3dp"
+                        app:layout_constraintTop_toTopOf="@+id/tv_days_count"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_days_count"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_days_count"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"
+                        android:text=" May 10, 2019 to May 20, 2019"
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_collapsingToolbar_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax"
+                    android:visibility="visible"
+            >
+
+
+
+                <ImageView
+                        android:id="@+id/iv_back_arrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_country_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_country_icon"
+                        android:src="@drawable/arrow_back_white"
+                />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_country_icon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="30dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_back_arrow"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_country_name"
+                        android:src="@mipmap/ic_profile_placeholder"
+                />
+
+                <com.utalli.RobotoMediumTextView
+                        android:id="@+id/tv_country_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:layout_marginTop="30dp"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_country_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_country_icon"
+                        app:layout_constraintRight_toLeftOf="@+id/cl_pop_up"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textSize="18sp"
+                        android:visibility="gone"
+                        android:textColor="@color/colorWhite"
+                        android:text="Australia"
+                />
+
+                <ImageView
+                        android:id="@+id/iv_three_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:visibility="gone"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_country_icon"
+                        android:src="@drawable/three_dots_icon"
+                />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_pop_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="15dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_country_icon"
+                        android:background="@drawable/rounded_rect_white"
+                        android:visibility="gone"
+                >
+
+                    <com.utalli.RobotoRegularTextView
+                            android:id="@+id/tv_edit_trip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="14sp"
+                            android:textColor="@color/grey_5"
+                            android:text="Edit trip"
+                    />
+
+                    <View
+                            android:id="@+id/view_popUp"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_edit_trip"
+                            android:background="@color/grey_1"
+                    />
+
+                    <com.utalli.RobotoRegularTextView
+                            android:id="@+id/tv_cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/view_popUp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:textSize="14sp"
+                            android:textColor="@color/grey_5"
+                            android:text="Cancel"
+                    />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <Toolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
+            android:visibility="visible"
+            android:layout_gravity="top"
+            android:elevation="4dp"
+            android:background="@android:color/transparent"
+    >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_countryDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="visible"
+        >
+
+            <ImageView
+                    android:id="@+id/toolbar_back_arroww"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/toolbar_country_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar_country_icon"
+                    android:src="@drawable/arrow_back_white"
+
+            />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/toolbar_country_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/toolbar_back_arroww"
+                    app:layout_constraintRight_toLeftOf="@+id/toolbar_country_name_toVisit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@mipmap/ic_profile_placeholder"
+                    android:visibility="gone"
+            />
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/toolbar_country_name_toVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/toolbar_country_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolbar_country_icon"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:text=""
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_you_are_visiting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp"
+                    android:text="@string/text_you_are_visiting"
+            />
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_place_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_you_are_visiting"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/grey_5"
+                    android:textSize="14sp"
+                    android:text="Western Australia, Queensland, Victoria"
+            />
+
+            <View
+                    android:id="@+id/view_1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_place_name"
+                    android:background="@color/grey_1"
+            />
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_guides_available"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_1"
+                    android:textColor="@color/grey_5"
+                    android:text="@string/text_guides_available"
+            />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_guide_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_guides_available"
+            >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.utalli.RobotoMediumTextView
+                    android:id="@+id/tv_no_data_found_guide_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                     android:text="Unfortunately We don’t have any Guide listed in this area.We are working on addressing the issue on the mean time you can try utilizing the following resources or nearby Guides who are more familiar with the area.Thanks for choosing Utalii for your tourism needs."
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="gone"
+            >
+
+            </com.utalli.RobotoMediumTextView>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/near_me_unselected" android:state_checked="false"/>
+    <item android:drawable="@drawable/near_me_selected" android:state_checked="true"/>
+
+    <item android:drawable="@drawable/my_tour_unselected" android:state_checked="false"/>
+    <item android:drawable="@drawable/my_tour_selected" android:state_checked="true"/>
+
+    <item android:drawable="@drawable/message_unselected" android:state_checked="false"/>
+    <item android:drawable="@drawable/message_selected" android:state_checked="true"/>
+
+
+
+</selector>

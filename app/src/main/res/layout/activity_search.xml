@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/color_blue"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+    >
+
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="5dp"
+        >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    android:background="@color/colorWhite"
+            >
+                <ImageView
+                        android:padding="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:id="@+id/iv_back"
+                        android:src="@drawable/arrow_back_color_primary"
+
+
+                />
+                <com.utalli.RobotoRegularEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_back"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@android:color/transparent"
+                        android:textSize="14sp"
+                        android:imeOptions="actionSearch"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:textCursorDrawable="@drawable/cursor_drawable"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:singleLine="true"
+                        android:paddingTop="15dp"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_cancel"
+                        android:paddingBottom="15dp"
+                        android:paddingRight="40dp"
+                        android:hint="@string/hint_explore_country_or_place"/>
+
+                <ImageView
+                        android:id="@+id/iv_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="@+id/et_search"
+                        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:src="@drawable/ic_clear_color_primary"
+                        android:padding="15dp"
+                        android:visibility="gone"
+                />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_languageList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top"
+
+    >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ProgressBar
+            android:layout_width="0dp" android:layout_height="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top"
+            android:indeterminate="true"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/pb_loader"
+            android:visibility="gone"
+
+    />
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_no_data_found"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:layout_height="wrap_content">
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:src="@drawable/ic_empty_search"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   app:layout_constraintRight_toRightOf="parent"
+                   android:paddingLeft="10dp"
+                   android:paddingRight="10dp"
+                   android:id="@+id/iv_warning"
+        />
+
+
+        <View android:layout_width="0dp" android:layout_height="2dp"
+              android:background="@color/grey_1"
+              app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+              app:layout_constraintLeft_toLeftOf="@+id/iv_warning"
+              app:layout_constraintRight_toRightOf="@+id/iv_warning"
+              android:layout_marginTop="10dp"
+
+        />
+
+
+        <com.utalli.RobotoRegularTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_warning"
+                android:text="@string/txt_found_nothing"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/color_blue"
+                android:textSize="20sp"
+                android:id="@+id/tv_txt_found_nothing"
+        />
+
+        <com.utalli.RobotoRegularTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_txt_found_nothing"
+                android:text="Sorry, we are unable to complete the search you requested"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/grey_6"
+                android:textSize="14sp"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

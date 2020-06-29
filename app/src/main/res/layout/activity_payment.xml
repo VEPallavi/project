@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_primary_light"
+>
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_payment"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/color_blue"
+    >
+
+        <com.utalli.RobotoMediumTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="@string/text_payment"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/layout_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+        >
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_cardNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColorHint="@color/grey"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/color_blue"
+                        android:hint="Card number"
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_CardHolderName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_cardNumber"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/layout_cvv"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="@color/grey"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_name_on_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/color_blue"
+                        android:hint="Name on card"
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_cvv"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_cardNumber"
+                    app:layout_constraintLeft_toRightOf="@+id/layout_CardHolderName"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColorHint="@color/grey"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_cvv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/color_blue"
+                        android:maxLength="4"
+                        android:hint="CVV"
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_validThrough"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_CardHolderName"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColorHint="@color/grey"
+                    app:boxStrokeColor="@color/color_blue"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_validThrough"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:inputType="textPhonetic"
+                        android:textColorHint="@color/color_blue"
+                        android:textColor="@color/colorBlack"
+                        android:hint="Valid through (MM/YYYY)"
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <com.utalli.RobotoMediumButton
+            android:id="@+id/btn_add_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cardView"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawablePadding="10dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/color_blue"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_rect_grey"
+            android:text="ADD CARD"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

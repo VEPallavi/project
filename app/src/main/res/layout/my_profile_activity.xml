@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_primary_light"
+>
+
+    <!--android:background="#CC000000"-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_layout"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/app_gradient"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    >
+
+        <ImageView
+                android:id="@+id/iv_backArrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/arrow_back_white"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_layout_top"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_layout"
+                app:layout_constraintBottom_toTopOf="@+id/tv_logout"
+        >-->
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/cl_layout_top"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_logout"
+            app:layout_constraintTop_toBottomOf="@+id/cl_layout"
+            app:layout_constraintRight_toRightOf="parent"
+            android:fillViewport="true"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_primary_light"
+        >
+
+            <RelativeLayout
+                    android:id="@+id/layout_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                        android:id="@+id/iv_background_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@drawable/app_gradient"
+                />
+
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_compass_titlebar"
+                        android:layout_alignBottom="@+id/iv_background_img"
+                        android:layout_alignParentRight="true"
+
+                />
+
+
+                <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/iv_profile_image"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:src="@mipmap/ic_profile_placeholder"
+                            app:civ_border_color="@color/grey_2"
+                            app:civ_border_width="1dp"
+                    />
+                    
+                    <ProgressBar
+                            android:id="@+id/pb_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                    />
+                    
+                    
+                    <ImageView
+                            android:id="@+id/iv_image_picker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/camera_icon"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="bottom|right"
+                            android:padding="2dp"
+                            android:background="@drawable/white_circle"
+                    />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_top"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey"
+                    app:layout_constraintRight_toLeftOf="@+id/cv_edit"
+                    android:text="@string/text_name"
+            />
+
+            <com.utalli.RobotoRegularEditText
+                    android:id="@+id/et_user_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:maxLength="40"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorBlack_2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="14sp"
+                    android:enabled="false"
+
+                    android:text="Janice Crawford"
+            />
+
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="15dp"
+                    android:elevation="5dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+            >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_edit"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    <ImageView
+                            android:id="@+id/iv_editProfile_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:padding="5dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/edit_icon"
+                    />
+
+                    <com.utalli.RobotoMediumTextView
+                            android:id="@+id/tv_txt_save"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:visibility="gone"
+                            android:text="SAVE"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layout_constraintLeft_toRightOf="@+id/iv_editProfile_icon"
+                    />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/contactDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_user_name"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_contact_details"
+            />
+
+            <com.utalli.RobotoRegularEditText
+                    android:id="@+id/et_user_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/contactDetails"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:maxLength="15"
+                    android:inputType="phone"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorBlack_2"
+                    android:textSize="14sp"
+                    android:text="+ 96343245456"
+                    android:enabled="false"
+
+            />
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/emailId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_user_number"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_email_id"
+            />
+
+            <com.utalli.RobotoRegularEditText
+                    android:id="@+id/et_email_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/emailId"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:maxLength="40"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorBlack_2"
+                    android:textSize="14sp"
+                    android:text="janicecraw@samplemail.com"
+
+                    android:enabled="false"
+
+            />
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_email_id"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_address"
+            />
+
+            <com.utalli.RobotoRegularEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/address"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:maxLength="100"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorBlack_2"
+                    android:textSize="14sp"
+                    android:text="4848 Willow Greene Drive Montgomery"
+
+                    android:enabled="false"
+            />
+
+
+            <View
+                    android:id="@+id/vieww1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_address"
+                    android:layout_marginTop="16dp"
+            />
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/emergencyContactNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vieww1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_emergency_contact_number"
+            />
+
+            <com.utalli.RobotoRegularEditText
+                    android:id="@+id/et_emergency_contact_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/emergencyContactNumber"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:maxLength="15"
+                    android:textColor="@color/colorBlack_2"
+                    android:background="@android:color/transparent"
+                    android:textSize="14sp"
+                    android:inputType="phone"
+                    android:text="+1 3342484232"
+                    android:enabled="false"
+            />
+
+
+            <View
+                    android:id="@+id/vieww2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_emergency_contact_number"
+                    android:layout_marginTop="16dp"
+            />
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/appSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vieww2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_payment"
+                    android:visibility="gone"
+            />
+
+            <ImageView
+                    android:id="@+id/iv_right_arrow_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right_arrow"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_payment"
+                    android:visibility="gone"
+            />
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_payment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/appSettings"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorBlack_2"
+                    android:textSize="14sp"
+                    android:text="XX-5689"
+                    android:visibility="gone"
+            />
+
+
+            <View
+                    android:id="@+id/vieww3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_payment"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+            />
+
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/helpAndSupport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vieww3"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:text="@string/text_settings_and_help"
+            />
+
+            <ImageView
+                    android:id="@+id/iv_right_arrow_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right_arrow"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_settings"
+            />
+
+            <com.utalli.RobotoRegularTextView
+                    android:id="@+id/tv_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/helpAndSupport"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/colorBlack_2"
+                    android:textSize="14sp"
+                    android:text="Notification, Help and Privacy policy etc"
+            />
+
+
+            <View
+                    android:id="@+id/vieww4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_settings"
+                    android:layout_marginTop="16dp"
+            />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <com.utalli.RobotoMediumButton
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_layout_top"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/color_blue"
+            android:textSize="14sp"
+            android:background="@drawable/rounded_rect_white"
+            android:text="@string/text_log_out"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">Utalii</string>
+
+    <string name="default_notification_channel_id">123</string>
+    <string name="sendbird_app_id">AEBF2475-F805-47BA-A2F7-A36614BE6DD4</string>
+    <string name="msg_no_internet">Please check your internet connection and try again.</string>
+    <string name="msg_invalid_name">Please enter a valid name.</string>
+    <string name="msg_invalid_email">Please enter a valid email id.</string>
+    <string name="msg_invalid_mobile_no">Please enter a valid mobile number.</string>
+    <string name="msg_empty_mobile_no">Please enter your mobile number.</string>
+    <string name="msg_empty_pass">Please enter your password.</string>
+    <string name="msg_invalid_pass">Password must be at least 6 characters.</string>
+    <string name="msg_incomplete_permission">Please allow all permissions requires to select profile image</string>
+    <string name="msg_not_same_pass">Password does not match.</string>
+    <string name="msg_otp_sent">OTP has been sent successfully to your mobile number.</string>
+    <string name="msg_empty_dob">Please enter your date of birth.</string>
+    <string name="msg_invalid_otp">Please enter a valid OTP code.</string>
+    <string name="text_add_card">Add Card</string>
+    <string name="msg_user_registered">Congratulations! Your account has been successfully created..</string>
+    <string name="msg_empty_gender">Please choose your gender.</string>
+    <string name="msg_common_error">Oops! Something went wrong. Please try again.</string>
+    <string name="guide_list_not_available">Guide State list not available</string>
+    <string name="msg_please_choose_arrival_date">Please choose your arrival date.</string>
+    <string name="msg_please_choose_departure_date">Please choose your departure date.</string>
+    <string name="msg_please_choose_arrival_date_smaller_or_equal_to_departure_date">Please choose arrival date before or until the departure date.</string>
+    <string name="msg_please_select_state">Please select your state.</string>
+    <string name="msg_please_choose_arrival_date_first">Please choose your arrival date first.</string>
+    <string name="msg_please_give_the_ratings">Please rate your experience.</string>
+
+
+    <string name="hint_enter_name">Enter Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+    <string name="hint_enter_new_password">Enter new password</string>
+    <string name="hint_re_enter_new_password">Re enter new password</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_enter_password">Enter password</string>
+    <string name="hint_enter_your_mobile_number">Enter your mobile number</string>
+    <string name="hint_explore_country_or_place">Explore country or place</string>
+    <string name="hint_type_message">Type a message</string>
+
+
+
+
+    <string name="button_sign_up">SIGN UP</string>
+
+
+
+    <string name="text_sign_up">SIGN UP</string>
+    <string name="text_pools_available">Pools Available</string>
+    <string name="text_enter_your_personal_details">Enter your personal details</string>
+    <string name="text_already_have_an_account">Already have an account?</string>
+    <string name="text_sign_in">SIGN IN</string>
+    <string name="text_guide_profile_setup">Guide profile setup</string>
+    <string name="text_upload_documents">Upload Documents</string>
+    <string name="text_name_of_the_document">Name of the document</string>
+    <string name="text_get_started">GET STARTED</string>
+    <string name="text_learn_more">LEARN MORE</string>
+    <string name="text_login">LOGIN</string>
+    <string name="text_log_in">LOG IN</string>
+    <string name="text_forgot_pass">Forgot Password?</string>
+    <string name="text_verification">Verification</string>
+    <string name="text_we_have_send_an_otp">We have send an OTP</string>
+    <string name="text_resend_otp">RESEND OTP</string>
+    <string name="text_verify">VERIFY</string>
+    <string name="text_recovery">Recovery</string>
+    <string name="text_we_will_do_verification_by_mobile_number">We will do verification by mobile number</string>
+    <string name="text_send_otp">SEND OTP</string>
+    <string name="text_guides_available_for_this_place">Guides available for this place</string>
+    <string name="text_save">Save</string>
+    <string name="text_please_create_new_password">Please create new password</string>
+    <string name="text_new_user">New User?</string>
+    <string name="text_view_all">VIEW ALL</string>
+    <string name="text_you_are_in">You are in</string>
+    <string name="text_name">Name</string>
+    <string name="text_contact_details">Contact details</string>
+    <string name="text_email_id">Email ID</string>
+    <string name="text_log_out">LOG OUT</string>
+    <string name="text_settings_and_help">Settings and help</string>
+    <string name="text_emergency_contact_number">Emergency Contact Number</string>
+    <string name="text_address">Address</string>
+    <string name="text_language_known">Language Known</string>
+    <string name="text_can_help_you_with">We can help with</string>
+    <string name="text_cancel_request">CANCEL REQUEST</string>
+    <string name="text_hire_him">Hire Him</string>
+    <string name="text_request_pool">Request Pool</string>
+    <string name="text_request_sent_to_guide">Request sent to guide</string>
+    <string name="text_let_s_start_with_your_trip_details">Let\'s start with your trip details</string>
+    <string name="text_country">COUNTRY</string>
+    <string name="text_change">CHANGE</string>
+    <string name="text_states_you_want_to_visit">Selected States</string>
+    <string name="text_states_in_country">Select Cities you want to visit</string>
+    <string name="text_descpp_trip_details">Provided above are considered as primary information and can be changed as
+        per availability of time, transport etc. We recommend to have conversation with guide to finalize your tour.
+    </string>
+    <string name="text_date_of_departure">Date of departure</string>
+    <string name="text_you_are_visiting">You are visiting</string>
+    <string name="text_guides_available">Guides available</string>
+    <string name="text_date_of_birth">Date of birth</string>
+    <string name="text_settings">Settings</string>
+    <string name="text_notification">Notification</string>
+    <string name="text_help_and_support">Help and Support</string>
+    <string name="text_about_us">About us</string>
+    <string name="text_privacy_policy">Privacy policy</string>
+    <string name="text_payment">Payment</string>
+    <string name="txt_gallery">Gallery</string>
+    <string name="txt_camera">Camera</string>
+    <string name="txt_found_nothing">Found Nothing!</string>
+    <string name="txt_no_chats_available">No Chats Available</string>
+    <string name="text_pending_request">PENDING REQUEST</string>
+    <string name="text_accept_request">ACCEPT REQUEST</string>
+    <string name="text_chat">Chat</string>
+
+    <string name="no_guide_available">No Guides Available</string>
+    <string name="nearest_guid_not_available">We don\'t have any guides near by you</string>
+
+    <string name="no_upcoming_tour_available">No Upcoming Tour Available</string>
+    <string name="you_don_t_have_any_upcoming_tour">You don\'t have any upcoming tour</string>
+
+    <string name="no_recent_tour_available">No Recent Tour Available</string>
+    <string name="you_don_t_have_any_recent_tour">You don\'t have any recent tour</string>
+    <string name="no_notification_available">No Notification Available</string>
+    <string name="you_don_t_have_any_notification">You don\'t have any notification</string>
+    <string name="text_waiting_for_guide_to_accept_the_tour_request">Waiting for guide to accept the tour request.</string>
+
+    <string name="no_chat_till_now">No chat till now.</string>
+
+
+
+
+
+
+
+
+    <string name="failed_token">Client Failed to retrieve token from server</string>
+    <string name="BraintreeFragment_initialized">BraintreeFragment is ready to use</string>
+    <string name="issues_with_authorization">There was an issue with your authorization string</string>
+    <string name="token_failed">Fail to retrieve client token </string>
+
+
+
+</resources>

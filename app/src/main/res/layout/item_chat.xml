@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp"
+>
+
+        <LinearLayout
+            android:id="@+id/lytMsgUser"
+            android:visibility="visible"
+            android:background="@drawable/bg_chat_friend"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtUserMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/txtUserMsgTime"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Hi There ? layout _constraintTop_ toTopOflayout _constraintTop  _to TopOf "
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:layout_marginRight="60dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="right"
+                >
+                <TextView
+                    android:id="@+id/txtUserMsgTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUserMsg"
+                    android:layout_toLeftOf="@id/imgFiendReadTick"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtUserMsg"
+                    app:layout_constraintRight_toLeftOf="@id/imgFiendReadTick"
+                    android:layout_marginRight="4dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/translucent_white"
+                    android:text="12:36 PM"
+                    />
+                <ImageView
+                    android:id="@+id/imgFiendReadTick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_eye_off"
+                    android:layout_below="@id/txtUserMsg"
+                    android:layout_alignParentRight="true"
+                    app:layout_constraintTop_toTopOf="@id/txtUserMsgTime"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/txtUserMsgTime"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_placeholder"
+            />
+
+        <ImageView
+            android:id="@+id/imgFrnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_placeholder"
+            />
+
+        <LinearLayout
+            android:id="@+id/lytMsgFriend"
+            android:visibility="gone"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_chat_user"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtFriendMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@id/txtFriendMsgTime"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="hey hello how are you ? "
+                android:textSize="16dp"
+                android:layout_marginRight="50dp"
+                android:textColor="@color/colorBlack"
+                />
+            <TextView
+                android:id="@+id/txtFriendMsgTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFriendMsg"
+                android:layout_marginRight="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="right"
+                android:text="12:36 PM"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--</layout>-->

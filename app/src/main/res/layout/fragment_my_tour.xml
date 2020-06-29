@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+        >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/app_gradient"
+            >
+                <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/toolbar"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+
+
+                >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_Pic"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@color/colorBlack"
+
+                    />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="20dp"
+                    >
+
+                        <com.utalli.RobotoRegularTextView
+                                android:id="@+id/tv_you_are_at"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:textSize="12sp"
+                                android:alpha=".7"
+                                android:textColor="@color/colorWhite"
+                                android:text="@string/text_you_are_in"
+                        />
+
+                        <com.utalli.RobotoRegularTextView
+                                android:id="@+id/et_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_you_are_at"
+                                app:layout_constraintBottom_toTopOf="@+id/viewwLast"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/colorWhite"
+                                android:text="Durban SA"
+                        />
+                        <View
+                                android:id="@+id/viewwLast"
+                                android:layout_width="0dp"
+                                android:layout_height="5dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:background="@drawable/horizontal_dashed_line"
+                                app:layout_constraintRight_toRightOf="@+id/et_location"
+                                app:layout_constraintTop_toBottomOf="@+id/et_location"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_current_tour"
+                        android:layout_width="0dp"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:padding="5dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/activities_tabs"
+                >
+                    <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_current_tour"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="8dp"
+                            android:elevation="5dp"
+                            app:cardUseCompatPadding="true"
+                    >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+
+                        >
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/cl_top"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+
+
+                            >
+                                <com.utalli.RobotoMediumTextView
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        android:text="Current Tour"
+                                        android:textSize="14sp"
+                                        android:paddingLeft="10dp"
+                                        android:paddingTop="10dp"
+                                        android:background="@color/light_green"
+                                        android:paddingBottom="30dp"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        android:textColor="@color/colorWhite"
+                                        android:id="@+id/tv_txt_current_tour"
+                                        android:layout_width="0dp" android:layout_height="wrap_content"/>
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/cl_bottom"
+                                    android:visibility="gone"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/cl_top"
+                            >
+
+
+                                <com.utalli.RobotoRegularTextView
+                                        android:id="@+id/tv_tour_status"
+                                        android:layout_width="0dp" android:layout_height="wrap_content"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        android:text="You are all set, enjoy your tour!"
+                                        android:padding="12dp"
+                                        android:textSize="12sp"
+                                        app:layout_constraintRight_toLeftOf="@+id/tv_tour_charges"
+                                />
+
+                                <com.utalli.RobotoRegularTextView
+                                        android:id="@+id/tv_tour_charges"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintTop_toTopOf="@+id/tv_tour_status"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        android:text="Private- $200"
+                                        android:textColor="@color/colorBlack"
+                                        android:padding="12dp"
+                                        android:textSize="12sp"
+                                />
+
+
+                                <com.utalli.RobotoMediumTextView
+                                        app:layout_constraintTop_toBottomOf="@+id/tv_tour_status"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        android:text="Today, +3"
+                                        android:textSize="18sp"
+                                        android:paddingLeft="12dp"
+
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        android:textColor="@color/colorBlack"
+                                        android:id="@+id/tv_tour_dates"
+
+                                        android:layout_width="0dp" android:layout_height="wrap_content"/>
+                                <com.utalli.RobotoRegularTextView
+                                        android:id="@+id/tv_guide_status"
+                                        android:layout_width="0dp" android:layout_height="wrap_content"
+                                        app:layout_constraintTop_toBottomOf="@+id/tv_tour_dates"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        android:text="Kevin pieterson is guiding you."
+                                        android:textColor="@color/colorBlack"
+                                        android:paddingTop="5dp"
+                                        android:paddingLeft="12dp"
+                                        android:paddingRight="12dp"
+                                        android:paddingBottom="10dp"
+                                        android:textSize="14sp"
+                                />
+
+                                <View android:layout_width="0dp" android:layout_height="1dp"
+                                      app:layout_constraintTop_toBottomOf="@+id/tv_guide_status"
+
+                                      app:layout_constraintLeft_toLeftOf="parent"
+                                      app:layout_constraintRight_toRightOf="parent"
+                                      android:background="@color/grey_4"
+                                      android:id="@+id/divider"
+                                />
+
+                                <com.utalli.RobotoRegularTextView
+                                        android:id="@+id/tv_chat"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
+                                        android:gravity="center"
+                                        android:text="Chat with guide"
+                                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.material.tabs.TabLayout
+                        android:layout_width="0dp"
+                        android:layout_height="?attr/actionBarSize"
+                        android:id="@+id/activities_tabs"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:tabTextColor="#80ffffff"
+                        app:tabSelectedTextColor="@color/colorWhite"
+                        app:tabIndicatorColor="@color/colorWhite"
+                        android:elevation="5dp"
+                        app:tabMode="fixed"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                ></com.google.android.material.tabs.TabLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_tours"
+                app:layout_constraintTop_toBottomOf="@+id/activities_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+      <!--  <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_my_tours"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/activities_tabs"
+        ></androidx.recyclerview.widget.RecyclerView>-->
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

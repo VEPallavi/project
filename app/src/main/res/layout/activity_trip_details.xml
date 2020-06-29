@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_main"
+>
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/color_blue"
+    >
+
+        <com.utalli.RobotoMediumTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:text="@string/text_let_s_start_with_your_trip_details"
+        />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nsv_layoutt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/color_primary_light"
+            app:layout_constraintBottom_toTopOf="@+id/button_confirm"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+    >
+
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/country"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:text="@string/text_country" />
+
+          <!--      <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_country_icon"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/country"
+                        android:src="@color/colorBlack"
+                        android:visibility="gone"
+                />-->
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_selected_country_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/country"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_change"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:text="India"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        app:layout_constraintTop_toBottomOf="@+id/country"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_selected_country_name"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/color_blue"
+                        android:textSize="12sp"
+                        android:text="@string/text_change"
+                        android:visibility="visible"
+                />
+
+
+
+                ////   new add-on
+
+                <LinearLayout
+                    android:id="@+id/ll_state"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_selected_country_name">
+
+
+
+                <com.utalli.RobotoMediumTextView
+                    android:id="@+id/txt_messageChooseState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    android:text="State" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_chooseState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30dp"
+                        android:scrollbars="none"
+                        android:background="@null"
+                        android:dropDownVerticalOffset="30dp">
+
+                    </androidx.appcompat.widget.AppCompatSpinner>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_dropdown"
+                        android:paddingRight="12dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/viewState"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"/>
+
+                </LinearLayout>
+
+
+                ///////////  new add-on
+
+
+
+
+
+
+
+                <View
+                        android:id="@+id/view1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_state"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey_1"
+                        android:visibility="gone"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_states_you_want_to_visit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        app:layout_constraintTop_toBottomOf="@+id/view1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:text="@string/text_states_you_want_to_visit"
+                        android:visibility="gone"
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_states_u_want_visit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_states_you_want_to_visit"
+                        android:visibility="gone"
+                >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <View
+                        android:id="@+id/view2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_states_u_want_visit"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey_1"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_cities_in_country"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        app:layout_constraintTop_toBottomOf="@+id/view2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:text="@string/text_states_in_country"
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cities_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_cities_in_country"
+                >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <com.utalli.RobotoMediumTextView
+                        android:id="@+id/tv_view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_cities_list"
+                        android:textColor="@color/color_blue"
+                        android:textSize="12sp"
+                        android:text="@string/text_view_all"
+                        android:visibility="gone"
+                />
+
+                <View
+                        android:id="@+id/view3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_view_all"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey_1"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/date_of_arrival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view3"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/star_icon"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:text="Date of arrival"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_date_of_arrival"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/date_of_arrival"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_arrival_date_change"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:hint="MM/DD/YYYY"
+
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_arrival_date_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@+id/date_of_arrival"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:textColor="@color/color_blue"
+                        android:textSize="12sp"
+                        android:text="@string/text_change"
+                        android:visibility="gone"
+                />
+
+                <View
+                        android:id="@+id/view4"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_date_of_arrival"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey_1"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/date_of_departure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view4"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/star_icon"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:text="@string/text_date_of_departure"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_date_of_departure"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/date_of_departure"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_departure_date_change"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:hint="MM/DD/YYYY"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_departure_date_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@+id/date_of_departure"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:textColor="@color/color_blue"
+                        android:textSize="12sp"
+                        android:text="@string/text_change"
+                        android:visibility="gone"
+                />
+
+                <View
+                        android:id="@+id/view5"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_date_of_departure"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey_1"
+                />
+
+                <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_descpp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view5"
+                        android:textSize="12sp"
+                        android:text="@string/text_descpp_trip_details"
+                />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.utalli.RobotoMediumButton
+            android:id="@+id/button_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nsv_layoutt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/rounded_rect_grey"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+            android:text="Confirm"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
