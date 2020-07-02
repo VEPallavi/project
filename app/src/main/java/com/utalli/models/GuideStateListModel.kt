@@ -39,9 +39,9 @@ class GuideStateListModel() : Parcelable {
     @Expose
     private var cityId: Int? = null
 
-    @SerializedName("cityname")
+    @SerializedName("cityName")
     @Expose
-    private var cityname: String? = null
+    private var cityName: String? = null
 
 
     @SerializedName("latitude")
@@ -69,7 +69,7 @@ class GuideStateListModel() : Parcelable {
         stateId = parcel.readValue(Int::class.java.classLoader) as? Int
         statename = parcel.readString()
         cityId = parcel.readValue(Int::class.java.classLoader) as? Int
-        cityname = parcel.readString()
+        cityName = parcel.readString()
         latitude = parcel.readString()
         longitude = parcel.readString()
     }
@@ -140,11 +140,11 @@ class GuideStateListModel() : Parcelable {
     }
 
     fun getCityname(): String? {
-        return cityname
+        return cityName
     }
 
-    fun setCityname(cityname: String) {
-        this.cityname = cityname
+    fun setCityname(cityName: String) {
+        this.cityName = cityName
     }
 
 
@@ -189,6 +189,8 @@ class GuideStateListModel() : Parcelable {
         parcel.writeString(countryName)
         parcel.writeValue(stateId)
         parcel.writeString(statename)
+        parcel.writeValue(cityId)
+        parcel.writeString(cityName)
         parcel.writeString(latitude)
         parcel.writeString(longitude)
     }

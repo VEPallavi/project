@@ -155,7 +155,18 @@
 
                     </androidx.appcompat.widget.AppCompatSpinner>
 
+                    <com.utalli.RobotoRegularTextView
+                        android:id="@+id/tv_chooseState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30dp"
+                        android:visibility="gone">
+
+                    </com.utalli.RobotoRegularTextView>
+
+
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_state_dropDown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@mipmap/ic_dropdown"

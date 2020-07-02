@@ -346,7 +346,7 @@ class GuideProfileDetailsActivity : AppCompatActivity(), View.OnClickListener {
     {
         tourStartDate = data!!.getStringExtra("tourStartDate")
         tourEndDate = data!!.getStringExtra("tourEndDate")
-        selectedStatesId = data!!.getStringExtra("selectedStatesId")
+        selectedStatesId = data!!.getStringExtra("selectedStatesId")     /////////////////////
 
         var inputFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
         var outputFormat:DateFormat = SimpleDateFormat("yyyy-MM-dd")

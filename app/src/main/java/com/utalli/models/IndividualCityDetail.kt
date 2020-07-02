@@ -7,6 +7,7 @@ var id:Int,
 var name : String ="",
 var country_id : Int,
 var states_id: Int,
+var stateName: String,
 
 var isSelected : Boolean
 

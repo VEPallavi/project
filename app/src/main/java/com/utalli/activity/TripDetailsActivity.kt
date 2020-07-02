@@ -210,12 +210,18 @@ class TripDetailsActivity : AppCompatActivity(), View.OnClickListener, AdapterVi
         if (guideLocation != null && guideLocation.size > 0)
         {
             for (item in guideLocation) {
-                var individualCityList = IndividualCityDetail(item.getCityId()!!, item.getCityname()!!, item.getCountryId()!!, item.getStateId()!!, false)
+                var individualCityList = IndividualCityDetail(item.getCityId()!!, item.getCityname()!!, item.getCountryId()!!, item.getStateId()!!, item.getStatename()!!, false)
                 individualCityDetail.add(individualCityList)
             }
 
             if (individualCityDetail != null && individualCityDetail.size > 0)
             {
+                spinner_chooseState.visibility = View.GONE
+                iv_state_dropDown.visibility = View.GONE
+                tv_chooseState.visibility = View.VISIBLE
+                tv_chooseState.text = individualCityDetail.get(0).stateName
+                selectedStatePosition = individualCityDetail.get(0).states_id
+              //  getStateData(individualCityDetail.get(0).country_id)
                 setupAdapter()
             }
         }

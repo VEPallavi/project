@@ -33,7 +33,6 @@ class ForgetPasswordActivity : AppCompatActivity(), View.OnClickListener {
 
         toolbar_recovery.setNavigationOnClickListener { finish() }
 
-
         initViews()
     }
 
