@@ -53,6 +53,7 @@ import com.utalli.models.UserModel
 import com.utalli.viewModels.NearMeViewModel
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.my_profile_activity.*
+import java.lang.Exception
 import java.util.HashMap
 import kotlin.collections.ArrayList
 import com.utalli.activity.HomeActivity as HomeActivity
@@ -273,38 +274,40 @@ class NearMeFragment : Fragment(), View.OnClickListener {
      * The purpose of this method is use to Get Near By Guides
      */
     private fun getNearbyGuides() {
-        if (mLocation != null)
-        {
-            var latitude = mLocation?.latitude
-            var longitude = mLocation?.longitude
-            var countryCode = AppPreference.getInstance(activity!!).getCountryCode()
-            nearMeViewModel!!.getNearbyGuides(activity!!, AppPreference.getInstance(activity!!).getAuthToken(), AppPreference.getInstance(activity!!).getId(), latitude.toString(), longitude.toString(), countryCode)
-                .observe(this, androidx.lifecycle.Observer {
-                    if (it!= null && it.has("status") && it.get("status").asString.equals("1"))
-                    {
-                        var response: NearByGuidResponse = Gson().fromJson(it, NearByGuidResponse::class.java)
 
-                        isRated = response.getIsRated()
+        try {
+            if (mLocation != null)
+            {
+                var latitude = mLocation?.latitude
+                var longitude = mLocation?.longitude
+                var countryCode = AppPreference.getInstance(activity!!).getCountryCode()
+                nearMeViewModel!!.getNearbyGuides(activity!!, AppPreference.getInstance(activity!!).getAuthToken(), AppPreference.getInstance(activity!!).getId(), latitude.toString(), longitude.toString(), countryCode)
+                    .observe(this, androidx.lifecycle.Observer {
+                        if (it!= null && it.has("status") && it.get("status").asString.equals("1"))
+                        {
+                            var response: NearByGuidResponse = Gson().fromJson(it, NearByGuidResponse::class.java)
 
-                        if(response.getTourRequestId() != null){
-                            tourRequestId = response.getTourRequestId()
-                        }
+                            isRated = response.getIsRated()
 
-                        if(response.getGuideImg() != null) {
-                            guideProfilePic = response.getGuideImg()
-                        }
-
-                        if( response.getGuideName() != null){
-                            guideName = response.getGuideName()
-                        }
-
-
-                        if(!(mContext!!.isFinishing())) {
-                            //show dialog
-                            if(isRated == false){
-                                openDialogForRating()
+                            if(response.getTourRequestId() != null){
+                                tourRequestId = response.getTourRequestId()
                             }
-                        }
+
+                            if(response.getGuideImg() != null) {
+                                guideProfilePic = response.getGuideImg()
+                            }
+
+                            if( response.getGuideName() != null){
+                                guideName = response.getGuideName()
+                            }
+
+
+                            if(!(mContext!!.isFinishing())) {
+                                //show dialog
+                                if(isRated == false){
+                                    openDialogForRating()
+                                }
+                            }
 
 
 
@@ -318,44 +321,48 @@ class NearMeFragment : Fragment(), View.OnClickListener {
 
 
 
-                        var popularDestinationArray = response.getPopulardestinations()
-                        var nearByGuidArray = response.getData()
-                        if (popularDestinationArray != null && popularDestinationArray.size > 0)
-                        {
-                            mHomeDashboardAdapterModel!!.setPopulardestinations(popularDestinationArray)
-                        }
-                        else
-                        {
+                            var popularDestinationArray = response.getPopulardestinations()
+                            var nearByGuidArray = response.getData()
+                            if (popularDestinationArray != null && popularDestinationArray.size > 0)
+                            {
+                                mHomeDashboardAdapterModel!!.setPopulardestinations(popularDestinationArray)
+                            }
+                            else
+                            {
 
-                        }
+                            }
 
-                        if (nearByGuidArray != null && nearByGuidArray.size > 0)
-                        {
-                            mHomeDashboardAdapterModel?.setData(nearByGuidArray)
-                        }
-                        else
-                        {
+                            if (nearByGuidArray != null && nearByGuidArray.size > 0)
+                            {
+                                mHomeDashboardAdapterModel?.setData(nearByGuidArray)
+                            }
+                            else
+                            {
 
+                            }
+                            if (mHomeDashboardAdapterModel!!.getData() != null && mHomeDashboardAdapterModel!!.getData()!!.size > 0)
+                            {
+                                cl_parentLayout.visibility = View.VISIBLE
+                                cl_no_GuideFound.visibility = View.GONE
+                                setupGuidList()
+                            }
+                            else
+                            {
+                                cl_parentLayout.visibility = View.GONE
+                                cl_no_GuideFound.visibility = View.VISIBLE
+                            }
                         }
-                        if (mHomeDashboardAdapterModel!!.getData() != null && mHomeDashboardAdapterModel!!.getData()!!.size > 0)
-                        {
-                            cl_parentLayout.visibility = View.VISIBLE
-                            cl_no_GuideFound.visibility = View.GONE
-                            setupGuidList()
+                        else {
+                            if (it!= null && it.has("message")){
+                                Utils.showToast(activity!!, it.get("message").asString)
+                            }
                         }
-                        else
-                        {
-                            cl_parentLayout.visibility = View.GONE
-                            cl_no_GuideFound.visibility = View.VISIBLE
-                        }
-                    }
-                    else {
-                        if (it!= null && it.has("message")){
-                            Utils.showToast(activity!!, it.get("message").asString)
-                        }
-                    }
-                })
+                    })
+            }
+        }catch (e: Exception){
+            e.printStackTrace()
         }
+
     }
 
 

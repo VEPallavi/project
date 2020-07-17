@@ -18,6 +18,8 @@ class RecentTourListModel(
     var ratingStatus: String = "",
     var rating: Int,
     var ratingComments: String = "",
+    var cityNames: String = "",
+
 
     var stateName: String = ""
 

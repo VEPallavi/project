@@ -54,17 +54,17 @@ class RecentToursFragment : Fragment() {
                     val type = object : TypeToken<List<RecentTourListModel>>() {}.type
                     var recentComingTourList = Gson().fromJson<List<RecentTourListModel>>(it.get("data"), type)
 
-
-
+                    
                     val stateType = object : TypeToken<List<String>>() {}.type
                      var recentTourStateList=Gson().fromJson<List<String>>(it.get("statesList"),stateType)
 
 
-                    for(i in 0..recentComingTourList.size-1)
-                    {
-                        recentComingTourList.get(i).stateName=recentTourStateList.get(i)
-
-                    }
+                        // comment by pallavi (17-07-2020) because response change
+//                    for(i in 0..recentComingTourList.size-1)
+//                    {
+//                        recentComingTourList.get(i).stateName=recentTourStateList.get(i)
+//
+//                    }
 
 
                     if(recentComingTourList != null && recentComingTourList.size >0){

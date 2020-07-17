@@ -58,7 +58,7 @@ class RecentTourAdapter(var mcontext: Context, var recentComingTourList: List<Re
         }
 
 
-        holder.tv_tour_states.text = recentComingTourList.get(position).stateName
+        holder.tv_tour_states.text = recentComingTourList.get(position).cityNames
 
 
         holder.tv_tourDate.text = strArrivalDate + " - " + strDeptDate
